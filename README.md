@@ -1,1 +1,1 @@
-# vin-testing
+# Vin plugin for WordPress
