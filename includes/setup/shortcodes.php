@@ -9,5 +9,5 @@ function vin_testing_register_shortcodes()
 
 function vin_testing_shortcode_function()
 {
-    require_once VIN_TESTING_PATH . '/includes/templates/front/shortcodes.php';
+    require_once VIN_TESTING_PATH . '/includes/templates/front/decode-by-vin.php';
 }

@@ -43,5 +43,5 @@ function vin_testing_plugin_options_page() {
     require_once VIN_TESTING_PATH . '/includes/templates/admin/dashboard.php';
 
 
-    echo '<h1 class="adminnnn">' .esc_html__('Admin Page Test', 'vin-testing'). '</h1>';
+//    echo '<h1 class="adminnnn">' .esc_html__('Admin Page Test', 'vin-testing'). '</h1>';
 }

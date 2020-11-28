@@ -9,4 +9,3 @@ const app = Vue.createApp({
     }
 });
 
-console.log('I am working (from admin.js)')
