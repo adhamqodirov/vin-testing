@@ -2,28 +2,18 @@
     <div id="vinApp" class="vin-list">
         <input v-model="message" placeholder="enter Vin Number" name="vin_number_name"/>
         <!--        <h2>Message is: {{ message }}</h2>-->
-
         <?php
         if (isset($_POST['is_post'])) {
 
             $selected_attributes = get_post_meta('1', 'selected_attributes')[0];
 
             $list = explode('%%%%', $selected_attributes);
-//
-//    echo '<pre>';
-//    echo 'split ';
-//    print_r($list);
-//    echo '</pre>';
-
-
 
             $vin_number = $_POST['vin_number_name'];
             $url = 'https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/' . $vin_number . '?format=json';
             $json = file_get_contents($url);
             $obj = json_decode($json);
             $length = $obj->Count;
-
-
 
             $display_attributes = [];
             for ($j = 0; $j < count($list); $j++) {
