@@ -19,19 +19,19 @@
 
                 <div class="col-3">
                     <label class="container">Make
-                        <input type="checkbox" checked="checked" name="vin_make">
+                        <input type="checkbox" <?php if(isChecked("Make")) echo 'checked="checked"'; ?>name="vin_make">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">Model
-                        <input type="checkbox" checked="checked" name="vin_model">
+                        <input type="checkbox" <?php if(isChecked("Model")) echo 'checked="checked"'; ?> name="vin_model">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">Year
-                        <input type="checkbox" checked="checked" name="vin_year">
+                        <input type="checkbox" <?php if(isChecked("Model Year")) echo 'checked="checked"'; ?> name="vin_year">
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">Manufacturer
-                        <input type="checkbox" checked="checked" name="vin_manufacturer">
+                        <input type="checkbox" <?php if(isChecked("Manufacturer Name")) echo 'checked="checked"'; ?> name="vin_manufacturer">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -78,9 +78,25 @@ if (isset($_POST['is_post'])) {
 
     //getting new listing metaboxes and taxonomies from add listing page
     update_post_meta('1', 'selected_attributes', $selected_attributes);
+    echo '<script type="text/javascript">location.reload(true);</script>';
+
 
 }
 
+function isChecked($text)
+{
+    $list = explode('%%%%', get_post_meta('1', 'selected_attributes')[0]);
+
+    $statusCheckbox= false;
+    foreach ($list as &$value) {
+
+        if ($value == $text) {
+            $statusCheckbox = true;
+        }
+    }
+    return $statusCheckbox;
+
+}
 
 
 

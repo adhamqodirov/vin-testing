@@ -18,9 +18,6 @@
             $display_attributes = [];
             for ($j = 0; $j < count($list); $j++) {
 
-
-
-
                 for ($i = 0; $i < $length; $i++) {
                     if ($list[$j] == $obj->Results[$i]->Variable) {
                         $display_attributes[$j]["name"] = $obj->Results[$i]->Value;
@@ -28,9 +25,6 @@
                 }
 
             }
-
-
-
 
 //    echo 'array ' . $obj->Array[0];
 //    var_dump($obj->Results[55]->Variable);
